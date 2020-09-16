@@ -322,7 +322,7 @@ authors = authors[authors$name!="others",]
 
 
 # Write csv files
-
+ndoc = length(unique(documents$pk))
 write.csv(causal.links,"../data/db/CausalLinks.csv", row.names = F, fileEncoding = "utf-8")
 write.csv(variables,"../data/db/Variables.csv", row.names = F, fileEncoding = "utf-8")
 write.csv(documents,"../data/db/Documents.csv", row.names = F, fileEncoding = "utf-8")
@@ -389,4 +389,5 @@ dbWriteTable(my_db2, "authors",authors, overwrite=T)
 dbWriteTable(my_db2, "version",version, overwrite=T)
 dbDisconnect(my_db2)
 
-
+print(ndoc)
+print(length(unique(documents$pk)))
