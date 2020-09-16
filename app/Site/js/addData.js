@@ -236,7 +236,7 @@ function updateBib(){
 	$("#submissionResults").html("");
 	displayBibtex();
 	var bib = document.getElementById("bibtexsource").value;
-	var bib_object = bibtex2JSON(bib);
+	var bib_object = bibtex2JSON(bib);	
 	if(bib_object=="Cannot parse bibtex file"){
 		document.getElementById("bibtexhtml").innerHTML = "Cannot parse bibtex file";
 		bib_year = "";
@@ -250,6 +250,7 @@ function updateBib(){
 		bib_source = bib;
 		bib_title = bib_object[0].properties.title;
 		checkForDuplicatePublication();
+		bib2GeneralNotes(bib_object[0].properties.note);
 		return(true);
 	}
 }
@@ -283,6 +284,26 @@ function checkForDuplicatePublication(){
 		}
 	}
 	return(false);
+}
+
+function bib2GeneralNotes(text){
+	if(typeof text !== "undefined"){
+		$("#generalNote").val(text);
+	} else{
+		$("#generalNote").val("");
+	}
+}
+
+function generalNotes2Bib(){
+	var txt = $("#generalNote").val();
+	// TODO: clean note
+	if(txt!=""){
+		var bib = document.getElementById("bibtexsource").value;
+		var bib_object = bibtex2JSON(bib);
+		bib_object[0].properties.note = txt;
+		var bibSource = cite.set(bib_object).get({format:"string",type:"string",style:"bibtex"});
+		$("#bibtexsource").val(bibSource);
+	}
 }
 
 function offerCausalLinksAsCSV(){
@@ -366,6 +387,11 @@ function updateRecord(response, type){
 		document.getElementById('bibtexsource').value = response[0].record;
 		// Update bib and key variables
 		updateBib();
+		var bib = document.getElementById("bibtexsource").value;
+		var bib_object = bibtex2JSON(bib);
+		if(bib_object!="Cannot parse bibtex file"){
+			bib2GeneralNotes(bib_object[0].properties.note);
+		}
 	}
 	if(type=='links'){
 		// receiving causal links details from server
@@ -454,6 +480,13 @@ $(document).ready(function(){
 	$("#bibtexsource").keyup(function(){
     	updateBib();
 	}); 
+	// Add General note changes to bibtex
+	$("#generalNote").change(function(){
+		generalNotes2Bib();
+	});
+	$("#generalNote").keyup(function(){
+		generalNotes2Bib();
+	});
 
 	// clear bibtex source
 	$("#bibtexsource").val("");
