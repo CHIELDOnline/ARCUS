@@ -375,6 +375,9 @@ contributors= escapeHTML(contributors,c("username",'realname'))
 
 
 my_db_file <- "../data/db/ARCUS.sqlite"
+if(dir.exists("C:/Users/admin/Downloads/")){
+  my_db_file <- "C:/Users/admin/Downloads/ARCUS.sqlite"
+}
 my_db <- src_sqlite(my_db_file, create = TRUE)
 my_db2 <- dbConnect(RSQLite::SQLite(), my_db_file)
 dbWriteTable(my_db2, "causal_links",causal_links, overwrite=T)
@@ -386,4 +389,4 @@ dbWriteTable(my_db2, "authors",authors, overwrite=T)
 dbWriteTable(my_db2, "version",version, overwrite=T)
 dbDisconnect(my_db2)
 
-try(file.copy(my_db_file, "C:/Users/admin/Downloads/ARCUS.sqlite"))
+
