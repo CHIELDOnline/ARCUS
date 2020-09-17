@@ -1,5 +1,4 @@
 "Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
-"non-foraging work",">","out-of-camp work time","pos","","none","","","","dyble2019engagement"
-"non-foraging work",">","leisure time","neg","","none","","","Mainly for women","dyble2019engagement"
-"non-foraging work","/>","wife’s relative housework","none","","none","","none","Correlation was found for time spent in domestic chores, inspecific to gender. But since, women do significantly more domestic chores, it has been coded as ‘wife’s share’","dyble2019engagement"
-
+"non-foraging work",">","out-of-camp work time","pos","Human Ecology; Anthropology","none","other","none","","dyble2019engagement"
+"non-foraging work",">","leisure time","neg","Human Ecology; Anthropology","none","other","none","Mainly for women","dyble2019engagement"
+"non-foraging work","/>","wife’s relative housework","none","Human Ecology; Anthropology","none","other","none","Correlation was found for time spent in domestic chores, inspecific to gender. But since, women do significantly more domestic chores, it has been coded as ‘wife’s share’","dyble2019engagement"
