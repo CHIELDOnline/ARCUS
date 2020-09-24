@@ -16,38 +16,66 @@ dtableConfig = {
         lengthChange: false,
         autoWidth: true,
         //fixedColumns: {leftColumns: 3},
-    	columnDefs: [
-    		{targets: 0, visible:false},
-    		{
-    			// Colour stage background (see vis_network_utils for `stageColours` definition)
-	    		targets: 6,
-	    		createdCell: function (td, cellData, rowData, row, col) {
-	    			var stageCol = stageColours[cellData]
-	    			if(stageCol!==undefined){
-	    				$(td).css('background-color', stageCol);
-	    			}
-	    		}
-	  		},
-            //{ width: "2%", targets: 1 }, //  try to change relation column width?
-            { targets: 9,
-				 // Render the notes function as a button that reveals the
-				 // note in a seperate div
-				  "render": function ( data, type, row, meta ) {
-				  if(type === 'display'){
-				  	 if(data!=null){
-					  	 // hide double quotes etc. and escape single quotes
-					  	 data = encodeURI(data).replace(/[']/g, escape);
-					  	 if(data.length>0){
-					     	data =  '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
-					     									data + '\')\">Quote</button>';
-					 	 	} 
-					 	 }
-				     }
-			      return(data);
-				  }
-			  }
+        columns:[
+        	{ data: 0, visible:false},  // pk
+        	{ data: 1}, // v1
+        	{ data: 2}, // relation
+	       	{ data: 3}, // v2
+   	       	{ data: 4}, //Cor,
+		   	{ data: 5, visible:false}, //Subject,
+		   	{ data: 6}, //Type,
+		   	{ data: null, render: makeSampleInfo},
+		   	{ data: 7, visible:false},//SampleN,
+		   	{ data: 8, visible:false}, //SampleLocation,
+		   	{ data: 9, visible:false}, //SampleDemographic,
+		   	{ data: null, render:makeAnalysisInfo},
+		   	{ data: 10, visible:false}, //AnalysisType,
+		   	{ data: 11, visible:false}, //AnalysisDetails,
+		   	{ data: 12}, //StatType,
+		   	{ data: 13}, //Stat,
+		   	{ data: 14}, //Confirmed,
+		   	{ data: 15, render: makeNotesInfo} //Notes
         ]
+    	
     };
+
+function makeNotesInfo(data, type, row){
+	if(type === 'display'){if(data!=null){
+		 out = encodeURI(data).replace(/[']/g, escape);
+		 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
+										out + '\')\">Quote</button>';
+		return(btn);
+	}}
+	return(data)
+}
+
+function makeSampleInfo(data, type, row){
+	console.log(data);
+	if(type === 'display'){if(data!=null){
+	var out = "<b>N: </b>" + data[7] + "<br />" + 
+			"<b>Location: </b>" + data[8] + "<br />" + 
+			"<b>Demographic: </b>" + data[9] + "<br />";
+	 // hide double quotes etc. and escape single quotes
+	 out = encodeURI(out).replace(/[']/g, escape);
+	 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
+										out + '\',surroundWithQuotes=false)\">Sample</button>';
+	 return(btn);
+	 }}
+	 return(data)
+}
+
+function makeAnalysisInfo(data, type, row){
+	if(type === 'display'){if(data!=null){
+	var out = "<b>Analysis Type: </b>" + data[10] + "<br />" + 
+			"<b>Analysis Details: </b>" + data[11];
+	 // hide double quotes etc. and escape single quotes
+	 out = encodeURI(out).replace(/[']/g, escape);
+	 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
+										out + '\',surroundWithQuotes=false)\">Analysis</button>';
+	 return(btn);
+	 }}
+	 return(data)
+}
 
 dtableConfig_otherDocsTable = {
 		ordering: true,
@@ -78,13 +106,15 @@ var document_network_physics_options = {
 	}};
 
 
-function openQuote(text){
+function openQuote(text,surroundWithQuotes=true){
 	text = decodeURI(text);
-	if(!text.startsWith('"')){
-		text = '"'+text;
-	}
-	if(!text.endsWith('"')){
-		text += '"';
+	if(surroundWithQuotes){
+		if(!text.startsWith('"')){
+			text = '"'+text;
+		}
+		if(!text.endsWith('"')){
+			text += '"';
+		}
 	}
 	$("#quoteDivText").html(text);
 	$("#quoteDiv").show();

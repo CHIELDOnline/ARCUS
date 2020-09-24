@@ -1,5 +1,154 @@
 {
 	"label" : "Topics",
 	"expanded" : "true",
-	"children" : []
+	"children" : [
+		{
+			"label" : "Formal Sciences",
+			"leaf" : false,
+			"children" : [
+				{
+					"label" : "Computer Science",
+					"leaf" : false,
+					"children" : [
+						{
+							"label" : "Artificial intelligence",
+							"leaf" : false,
+							"children" : [
+								{
+									"leaf" : "true",
+									"label" : "Cognitive science"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"label" : "Natural Sciences",
+			"leaf" : false,
+			"children" : [
+				{
+					"label" : "Biology",
+					"leaf" : false,
+					"children" : [
+						{
+							"label" : "Ecology",
+							"leaf" : false,
+							"children" : [
+								{
+									"leaf" : "true",
+									"label" : "Human ecology"
+								}
+							]
+						},
+						{
+							"label" : "Evolutionary biology",
+							"leaf" : true,
+							"children" : [
+								{
+									"leaf" : "true",
+									"label" : ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"label" : "Social sciences",
+			"leaf" : false,
+			"children" : [
+				{
+					"label" : "Economics",
+					"leaf" : false,
+					"children" : [
+						{
+							"leaf" : "true",
+							"label" : "Behavioural economics"
+						}
+					]
+				},
+				{
+					"label" : "Psychology",
+					"leaf" : true,
+					"children" : [
+						{
+							"leaf" : "true",
+							"label" : "Applied psychology"
+						},
+						{
+							"leaf" : "true",
+							"label" : "Developmental psychology"
+						}
+					]
+				},
+				{
+					"label" : "Sociology",
+					"leaf" : true,
+					"children" : [
+						{
+							"leaf" : "true",
+							"label" : "Comparative sociology"
+						},
+						{
+							"leaf" : "true",
+							"label" : "Gender studies"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label" : "Unclassified",
+			"leaf" : false,
+			"children" : [
+				{
+					"leaf" : "true",
+					"label" : "Applied Psychology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Behavioural Economics"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Sociology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Gender Studies"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Evolutionary Biology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Human Ecology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Anthropology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Comparative Sociology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Cognitive Science"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Psychology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Developmental Psychology"
+				}
+			]
+		}
+	]
 }

@@ -10,12 +10,12 @@ SELECT name, pk, COUNT(name) FROM (
 SELECT s.[name],s.[pk]
   FROM causal_links l 
   LEFT JOIN variables s ON l.Var1 = s.pk 
-  WHERE l.[topic] LIKE :key1
+  WHERE l.[subject] LIKE :key1
 UNION ALL
 SELECT s.[name],s.[pk]
   FROM causal_links l 
   LEFT JOIN variables s ON l.Var2 = s.pk 
-  WHERE l.[topic] LIKE :key2
+  WHERE l.[subject] LIKE :key2
   )
   GROUP BY name ORDER BY COUNT(name) DESC
 EOT;
