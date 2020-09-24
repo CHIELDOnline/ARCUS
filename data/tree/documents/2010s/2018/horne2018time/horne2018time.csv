@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "gender",">","division of household labour","none","","none","statistical","none","Women performed significantly more housework than men, during transition to adulthood ","horne2018time"
 "work hours",">","division of household labour","pos","","none","","none","significant correlation only for women transitioning to young adulthood","horne2018time"
 "relative income",">","division of household labour","pos","","none","","none","significant correlation only for women transitioning to young adulthood","horne2018time"

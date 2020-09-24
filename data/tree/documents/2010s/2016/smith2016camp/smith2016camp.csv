@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "reciprocity","~","food sharing","none","Human Ecology; Anthropology","none","","none","Food-sharing seen in three camps, not seen in three","smith2016camp"
 "camp stability",">","reciprocity","pos","Human Ecology; Anthropology","none","","none","","smith2016camp"
 "reciprocity",">","camp stability","pos","Human Ecology; Anthropology","none","","none","","smith2016camp"

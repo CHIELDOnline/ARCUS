@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "responder expectation",">","ultimatum game offer: rejection","pos","Behavioural Economics","none","experiment","none","If responder has high expectations, her propensity to reject the offer goes up. Here, offer rejection reflects the actual decision made in the game (contrary to hypothetical decisions that responder ‘thinks’ she will make), and can be compared with a perception of fairness (rejection of offer, if considered unfair)","aina2020frustration"
 "hypothetical acceptance",">","ultimatum game offer: rejection","neg","Behavioural Economics","none","experiment","none","Frequency of rejection of greedy (unfair) offer is lower in actual scenarios, as opposed to hypothetical scenarios","aina2020frustration"
 "actual acceptance",">","ultimatum game offer: rejection","none","Behavioural Economics","none","experiment","none","","aina2020frustration"

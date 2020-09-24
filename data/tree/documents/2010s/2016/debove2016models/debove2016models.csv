@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "player role",">","ultimatum game offer","none","Behavioural Economics","none","model","none","When the player gets to alternate between roles of proposer and responder, the equilibrium offer becomes a 50% share of the endowment","debove2016models"
 "reputation concerns",">","ultimatum game offer","none","Behavioural Economics","none","model","none","Reputation of both proposers and responders become important in the partner choice framework, where one needs to maintain their reputation in order to be chosen as partners. This leads to the evolution of an equilibrium offer of 50% of the endowment","debove2016models"
 "reputation concerns","^","fairness: equality","none","Evolutionary biology","none","model","none","","debove2016models"

@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "employment: homemakers",">","life satisfaction","pos","Sociology; Gender studies","none","","none","Overall, homemakers are happier than full-time workers. However, the significance of this difference is reduced when interaction with country-level variables are taken into account","treas2011happy"
 "employment: full time workers",">","life satisfaction","neg","Sociology; Gender studies","none","","none","In general, full-time workers have lower happiness and life satisfaction. However, the correlation becomes positive once country-level variables are considered, in particular, full-time working wives are happier in countries with higher gender egalitarianism and higher social support for working women","treas2011happy"
 "employment: part time workers",">","life satisfaction","none","Sociology; Gender studies","none","","none","Satisfaction levels of part-time working wives are similar to those of homemakers, which is higher than that of full-time workers","treas2011happy"

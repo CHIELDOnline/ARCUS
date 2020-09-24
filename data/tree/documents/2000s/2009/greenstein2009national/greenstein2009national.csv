@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "mean gender ideology",">","wife’s relative housework","neg","Sociology; Gender Studies","none","","none","","greenstein2009national"
 "relative income",">","wife’s relative housework","neg","Sociology; Gender Studies","none","","none","Wives in households with higher relative income do lesser housework","greenstein2009national"
 "age",">","wife’s relative housework","n-m","Sociology; Gender Studies","none","","none","Curvilinear relationship: predicted hours of housework per week start low for younger wives, peak at age of 50 and then decrease again","greenstein2009national"

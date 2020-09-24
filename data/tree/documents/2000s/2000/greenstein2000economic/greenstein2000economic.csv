@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "economic dependance",">","housework","pos","","none","","none","As one’s economic dependance increases (no earnings), the number of hours spent in housework also increases. A strong relationship for women and a weaker relationship for men","greenstein2000economic"
 "residence",">","housework","none","","none","","none","An effect of metropolitan residence on wive’s amount of housework","greenstein2000economic"
 "gender ideology",">","housework","none","","none","","none","More traditional wives perform more housework; more traditional husbands perform less housework","greenstein2000economic"

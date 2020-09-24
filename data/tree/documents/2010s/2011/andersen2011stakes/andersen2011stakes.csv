@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "stake",">","ultimatum game offer","neg","Behavioural Economics","none","","none","The proportion of total amount offered in bargain decreases as the total amount (stake increases). However the absolute offer amount increases.","andersen2011stakes"
 "wealth","~","ultimatum game offer","none","Behavioural Economics","none","","none","As wealth earned previously increases, it has only small effect on ultimatum game offer","andersen2011stakes"
 "wealth",">","ultimatum game offer: rejection","none","Behavioural Economics","none","","none","Its a positive correlation but not statistically significant","andersen2011stakes"

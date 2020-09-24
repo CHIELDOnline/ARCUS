@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "division of household labour",">","perceived fairness","none","Sociology; Comparative Sociology; Gender Studies","none","","none","True for both men and women","jansen2016perceived"
 "share of paid work","/>","perceived fairness","neg","Sociology; Comparative Sociology; Gender Studies","none","","none","Relative share of paid work does not influence fairness perceptions in women, but it does so in men. In women though, absolute hours in paid work does affect their perception of fairness.","jansen2016perceived"
 "relative income",">","perceived fairness","neg","Sociology; Comparative Sociology; Gender Studies","none","","none","Holds for women earning a higher share of the household income. Does not hold for men","jansen2016perceived"

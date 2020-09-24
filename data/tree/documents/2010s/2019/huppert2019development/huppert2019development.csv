@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "age",">","distributive preference: equity","pos","Psychology; Developmental Psychology","none","experiment","none","","huppert2019development"
 "distributive preference: equity",">","perceived fairness","pos","Psychology; Developmental Psychology","none","","none","","huppert2019development"
 "merit",">","distributive preference: equity","neg","Psychology; Developmental Psychology","none","experiment","none","Children from individualistic cultures showed greater preference for equity (than children from collectivistic cultures), when merit was varied ","huppert2019development"

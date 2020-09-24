@@ -1,4 +1,4 @@
-"Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes","bibref"
+"Var1","Relation","Var2","Cor","Subject","Stage","Type","Confirmed","Notes","bibref"
 "demographics",">","fairness","none","Evolutionary Biology","none","model","none","The frequency of trading classes (proposers or responders) increases when the division of resources is biased towards them. Then, frequency stabilizes as payoff will decrease. This stabilization will happen exactly when payoffs are equalized","andre2011evolution"
 "biological market: symmetry","/>","fairness","none","Evolutionary Biology","none","model","none","If proposers are limiting, every proposer is paired up and the equilibrium distribution is p = 0. If responders are limiting, then least generous proposers won’t have partner. In this case if there are more generous mutants, they will evolve and get fixed.","andre2011evolution"
 "asymmetric payoff",">","fairness","none","Evolutionary Biology","none","model","none","Overall, the payoffs get equalized, depending on investment","andre2011evolution"
