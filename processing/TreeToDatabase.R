@@ -21,9 +21,11 @@ default_contributor_realname = "Angarika Deb"
 
 causal_links_columns = 
   c('bibref', 'Var1','Relation','Var2',
-    'Cor',"Process",
-    "Topic", "Stage", "Type",
-    "Subtype","Confirmed","Notes")
+    'Cor','Subject',
+    "Type",
+    "SampleN","SampleLocation","SampleDemographic",
+    "AnalysisType","AnalysisDetails","StatType","Stat",
+    "Confirmed","Notes")
 
 # helper functions
 
@@ -305,7 +307,7 @@ causal.links = links[,c("pk",causal_links_columns)]
 causal.links$Var1 = variables[match(causal.links$Var1, variables$name),]$pk
 causal.links$Var2 = variables[match(causal.links$Var2, variables$name),]$pk
 
-causal.links$Process = ""#processes[match(causal.links$Process, processes$name),]$pk
+#causal.links$Process = ""#processes[match(causal.links$Process, processes$name),]$pk
 
 causal.links$Confirmed[causal.links$Confirmed=="none" & !is.na(causal.links$Confirmed)] = ""
 causal.links$Confirmed[causal.links$Confirmed=="null" & !is.na(causal.links$Confirmed)] = "null"
@@ -378,7 +380,10 @@ my_db_file <- "../data/db/ARCUS.sqlite"
 if(dir.exists("C:/Users/admin/Downloads/")){
   my_db_file <- "C:/Users/admin/Downloads/ARCUS.sqlite"
 }
-my_db <- src_sqlite(my_db_file, create = TRUE)
+# this line was used to wipe the database clean, I think,
+# but it should be dealt with by "overwrite" argument below
+#my_db <- src_sqlite(my_db_file, create = TRUE)
+
 my_db2 <- dbConnect(RSQLite::SQLite(), my_db_file)
 dbWriteTable(my_db2, "causal_links",causal_links, overwrite=T)
 dbWriteTable(my_db2, "variables",variables, overwrite=T)

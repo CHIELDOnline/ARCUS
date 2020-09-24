@@ -24,14 +24,14 @@ for(f in list.dirs(treeBaseFolder)){
     linkFilePos= paste0(f, "/" ,linkFile)
     l <- read.csv(paste0(f, "/" ,linkFile), stringsAsFactors = FALSE, encoding = 'UTF-8', fileEncoding = 'UTF-8')
 
-    if(sum(!is.na(l$Topic))>0){
-      l$Topic = sapply(l$Topic, function(X){
+    if(sum(!is.na(l$Subject))>0){
+      l$Subject = sapply(l$Subject, function(X){
         X = strsplit(X,";")[[1]]
         X[X==oldVar] = newVar
         paste(X,collapse=";")
       })
-      l$Topic = gsub("^;","",l$Topic)
-      #print(l$Topic)
+      l$Subject = gsub("^;","",l$Subject)
+      #print(l$Subject)
       write.csv(l, file = linkFilePos, fileEncoding = "UTF-8", row.names = FALSE)
     }
     

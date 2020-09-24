@@ -51,7 +51,7 @@ h = h[h$leaf,]
 ## Filter hierarchy to only those included in ARCUS
 ## (Alternative is to add rest to "unclassified")
 l = read.csv("../data/db/CausalLinks.csv",stringsAsFactors = F,encoding = "UTF-8",fileEncoding = "UTF-8")
-Ctopics = (l$Topic)
+Ctopics = (l$Subject)
 
 if(sum(!is.na(Ctopics))>0){
   
