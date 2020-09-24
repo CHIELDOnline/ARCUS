@@ -15,7 +15,6 @@ SELECT
        l2.Relation as relation,
        s2.[name] variable2,
        l2.Cor,
-       l2.Stage,
        l2.Type,
      d.[citation] bibref,
      l2.bibref as citekey,

@@ -11,9 +11,11 @@ SELECT l.pk,
 	   Relation as relation,
        s2.[name] variable2,
        Cor,
-       Topic,
-       Stage,
+       Subject,
        Type,
+       SampleN,SampleLocation,SampleDemographic,
+       AnalysisType,AnalysisDetails,
+       StatType,Stat,
        Confirmed,
        Notes
   FROM causal_links l
