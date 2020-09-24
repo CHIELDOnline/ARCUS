@@ -54,6 +54,7 @@ studyTypeColours = {
   experiment: "#e70000", // red
   qualitative:"#bce700", // yellow
   logical:    "#e700a3", // pink
+  survey:    "#ad5b18", // brown
   other:      "#000000"  // black
 };
 

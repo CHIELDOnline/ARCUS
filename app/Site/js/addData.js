@@ -35,6 +35,7 @@ var studyTypeTypes = [
 	{ Name: "model", Id: "model"},
 	{ Name: "simulation", Id: "simulation"},
 	{ Name: "statistical", Id: "statistical"},
+	{ Name: "survey", Id: "survey"},
 	{ Name: "qualitative", Id: "qualitative"},
 	{ Name: "logical", Id: "logical"},
 	{ Name: "hypothesis", Id: "hypothesis"},
