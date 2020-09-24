@@ -12,6 +12,7 @@ var existingDocuments = [];
 var editingExistingData = false;
 
 var relationTypes = [
+	{ Name: "", Id: "" },
 	{ Name: ">", Id: ">" },
 	{ Name: "<=>", Id: "<=>" },
 	{ Name: "~=", Id: "~=" },
@@ -22,7 +23,7 @@ var relationTypes = [
 ];
 
 var correlationTypes = [
-	{ Name: "", Id: "none"},
+	{ Name: "", Id: ""},
 	{ Name: "pos", Id: "pos"},
 	{ Name: "neg", Id: "neg"},
 	{ Name: "n-m", Id: "n-m"},
@@ -41,14 +42,6 @@ var studyTypeTypes = [
 	{ Name: "hypothesis", Id: "hypothesis"},
 	{ Name: "other", Id: "other"}
 	];
-
-var stageTypes = [
-	{Name: "", Id: "none"},
-	{Name:"preadaptation", Id: "preadaptation"},
-	{Name:"coevolution", Id: "coevolution"},
-	{Name:"cultural evolution", Id: "cultural evolution"},
-	{Name:"language change", Id: "language change"}
-];
 
 var confirmTypes = [
 	{Name: "", Id: "none"},
@@ -90,6 +83,115 @@ function escapeHTML (s, noEscapeQuotes) {
 var escapeCell = function(value, item){
     return $("<td>").append(escapeHTML(value));
 }
+var sampleCell = function(value, item){
+	console.log("ITEM");
+	console.log(item);
+    return $("<td>").append(escapeHTML(value + ";" + item.SampleLocation + ";" + item.SampleDemographic));
+}
+var analysisCell = function(value, item){
+    return $("<td>").append('TODO');
+}
+
+var gx = 0;
+
+customEditRowRenderer = function(item, itemIndex) {
+    var grid = this;
+	gx = grid;
+    var headers = grid._headerRow[0].children;
+    var headerWidths = []
+    for(var i=0;i<headers.length;++i){
+    	headerWidths.push($(headers[i]).outerWidth());
+    }
+    
+    var fields = ["Var1","Relation","Var2","Cor","Subject","Type","Sample","Analysis","Stat type","Stat","Confirmed","Notes"];
+    
+    var $Var1 = $('<input>').attr("type", "text").attr("name", "Var1").val(item.Var1).css({width:"100%",padding: ".3em .5em;"});
+    var $Relation = makeSelector(relationTypes).attr("name", "Relation").val(item.Relation).css({width:"100%",padding: ".3em .5em;"});
+    var $Var2 = $('<input>').attr("type", "text").attr("name", "Var2").val(item.Var2).css({width:"100%",padding: ".3em .5em;"});
+    var $Cor = makeSelector(correlationTypes).attr("name", "Cor").val(item.Cor).css({width:"100%",padding: ".3em .5em;"});
+    var $Subject = $('<input>').attr("type", "text").attr("name", "Subject").val(item.Subject).css({width:"100%",padding: ".3em .5em;"});
+    var $Type = makeSelector(studyTypeTypes).attr("name", "Type").val(item.Type).css({width:"100%",padding: ".3em .5em;"});
+    var $Sample = $('<button>Edit</button>').click(showSampleEditor).css({width:"100%",padding: ".3em .5em;"});
+    	$("#SampleN").val(item.Sample);
+    	$("#SampleLocation").val(item.SampleLocation);
+    	$("#SampleDemographic").val(item.SampleLocation);
+    var $Analysis = $('<button>Edit</button>').click(showAnalysisEditor).css({width:"100%",padding: ".3em .5em;"});
+    var $StatType = $('<input>').attr("type", "text").attr("name", "StatType").val(item["Stat type"]).css({width:"100%",padding: ".3em .5em;"});    
+    var $Stat = $('<input>').attr("type", "text").attr("name", "Stat").val(item.Stat).css({width:"100%",padding: ".3em .5em;"});    
+    var $Confirmed = makeSelector(confirmTypes).attr("name", "Confirmed").val(item.Confirmed).css({width:"100%",padding: ".3em .5em;"});
+    var $Notes = $('<input>').attr("type", "text").attr("name", "Notes").val(item.Var1).css({width:"100%",padding: ".3em .5em;"});
+    
+
+    var $updateButton = $("<input>").attr("type", "button").addClass("jsgrid-button jsgrid-update-button").height("100%");
+    var $cancelButton = $("<input>").attr("type", "button").addClass("jsgrid-button jsgrid-cancel-button").height("100%");
+
+    $updateButton.on("click", function() {
+      grid.updateItem(item, {
+        Var1: $Var1.val(),
+        Relation: $Relation.val(),
+        Var2: $Var2.val(),
+        Cor: $Cor.val(),
+        Subject: $Subject.val(),
+        Type: $Type.val(),
+        SampleN: $("#SampleN").val(),
+        SampleLocation: $("#SampleLocation").val(),
+        SampleDemographic: $("#SampleDemographic").val(),
+        Analysis: $("#AnalysisType").val(),
+        AnalysisDetails: $("#AnalysisDetails").val(),
+        StatType: $StatType.val(),
+        Stat: $Stat.val(),
+        Confirmed: $Confirmed.val(),
+        Notes: $Notes.val()
+      });
+    });
+
+    $cancelButton.on("click", function() {
+      grid.cancelEdit();
+    });
+	
+	console.log(headerWidths);
+    return $('<tr>')
+      .append($('<td>').addClass("jsgrid-cell").width(headerWidths[0]).append($Var1))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[1]).append($Relation))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[2]).append($Var2))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[3]).append($Cor))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[4]).append($Subject))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[5]).append($Type))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[6]).append($Sample))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[9]).append($Analysis))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[11]).append($StatType))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[12]).append($Stat))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[13]).append($Confirmed))
+     .append($("<td>").addClass("jsgrid-cell").width(headerWidths[14]).append($Notes))
+      
+      .append($updateButton)
+      .append($cancelButton);
+  }
+  
+function makeSelector(options){
+	var $el = $("<select>").width("100%");
+	$el.empty(); // remove old options
+	for(var i=0;i<options.length;++i){
+	    $('<option />', {value: options[i].Name, text: options[i].Id}).appendTo($el);
+	}
+	return($el)
+}
+
+
+showSampleEditor = function(){
+	$("#sampleEditor").show();
+	$("#sampleEditorConfirm").click(function(){
+	
+	});
+	
+}
+
+showAnalysisEditor = function(){
+	//TODO
+}
+
+
+
 
 // Add validator for variable names
 variableIsLowercaseAndNotBlank = function(value, item) {
@@ -129,9 +231,15 @@ var dataHeaders = [
 		    	validate: ["lowercase","noWhitespace"]
 		    },
             { name: "Cor", type: "select", items: correlationTypes, valueField: "Id", textField: "Name" },
-            { name: "Topic", type: "text", width: 150,cellRenderer: escapeCell },
-            { name: "Stage", type: "select", items: stageTypes, valueField:"Id", textField: "Name"},
+            { name: "Subject", type: "text", width: 150,cellRenderer: escapeCell },
 			{ name: "Type", type: "select", items: studyTypeTypes, valueField: "Id", textField: "Name", width: 150 },
+			{ name: "Sample", type: "text", width: 50, cellRenderer: sampleCell },
+			{ name: "SampleLocation", type: "text", width: 0, css:"hiddenColumn" },
+			{ name: "SampleDemographic", type: "text", width: 0, css:"hiddenColumn" },
+			{ name: "Analysis", type: "text", width: 50, cellRenderer: analysisCell },
+			{ name: "AnalysisDetails", type: "text", width: 0, css:"hiddenColumn" },
+			{ name: "Stat type", type: "text"},
+			{ name: "Stat", type: "text"},
 			{ name: "Confirmed", type: "select", items: confirmTypes, valueField: "Id", textField: "Name" },
 			{ name: "Notes", type: "text", width: 150, cellRenderer: escapeCell },
             { type: "control" }

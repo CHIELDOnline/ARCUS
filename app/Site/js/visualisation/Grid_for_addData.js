@@ -25,7 +25,9 @@ function prepareTable(){
 
         onItemUpdated: gridUpdated,
         onItemInserted: redrawGUIfromGrid,
-        onItemDeleted: redrawGUIfromGrid
+        onItemDeleted: redrawGUIfromGrid,
+        
+        editRowRenderer: customEditRowRenderer
     });
 }
 

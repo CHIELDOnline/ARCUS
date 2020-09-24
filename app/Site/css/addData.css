@@ -34,6 +34,10 @@ ul {
     border-style:solid;
 }
 
+.hiddenColumn {
+	display: none;
+}
+
 /* ---------- */
 
 #mynetwork {
@@ -61,6 +65,16 @@ ul {
     margin-left:5%;
     padding-top: 6px;
     padding-bottom: 6px;
+}
+
+#sampleEditor{
+	display: none;
+	position: absolute;
+	top:50%;
+	left: 20%;
+	right: 20%
+	background: "#FFFACD";
+	box-shadow: 10px 10px 5px grey;
 }
 
 /* display long text as ellipsis */
