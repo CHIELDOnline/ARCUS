@@ -51,30 +51,34 @@ function makeNotesInfo(data, type, row){
 
 function makeSampleInfo(data, type, row){
 	console.log(data);
-	if(type === 'display'){if(data!=null){
-	var out = "<b>N: </b>" + data[7] + "<br />" + 
-			"<b>Location: </b>" + data[8] + "<br />" + 
-			"<b>Demographic: </b>" + data[9] + "<br />";
-	 // hide double quotes etc. and escape single quotes
-	 out = encodeURI(out).replace(/[']/g, escape);
-	 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
-										out + '\',surroundWithQuotes=false)\">Sample</button>';
-	 return(btn);
-	 }}
-	 return(data)
+	if(type === 'display'){
+		if((data[7]!=null) || (data[8]!=null) || (data[9]!=null)){
+			var out = "<b>N: </b>" + data[7] + "<br />" + 
+					"<b>Location: </b>" + data[8] + "<br />" + 
+					"<b>Demographic: </b>" + data[9] + "<br />";
+			 // hide double quotes etc. and escape single quotes
+			 out = encodeURI(out).replace(/[']/g, escape);
+			 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
+												out + '\',false)\">Sample</button>';
+			 return(btn);
+	 	}
+	 }
+	 return("")
 }
 
 function makeAnalysisInfo(data, type, row){
-	if(type === 'display'){if(data!=null){
-	var out = "<b>Analysis Type: </b>" + data[10] + "<br />" + 
-			"<b>Analysis Details: </b>" + data[11];
-	 // hide double quotes etc. and escape single quotes
-	 out = encodeURI(out).replace(/[']/g, escape);
-	 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
-										out + '\',surroundWithQuotes=false)\">Analysis</button>';
-	 return(btn);
-	 }}
-	 return(data)
+	if(type === 'display'){
+		if((data[10]!=null) || (data[11]!=null)){
+			var out = "<b>Analysis Type: </b>" + data[10] + "<br />" + 
+					"<b>Analysis Details: </b>" + data[11];
+			 // hide double quotes etc. and escape single quotes
+			 out = encodeURI(out).replace(/[']/g, escape);
+			 var btn = '<button class="btn btn-primary" onclick=\"openQuote(\'' + 
+												out + '\',false)\">Analysis</button>';
+			 return(btn);
+		}
+	 }
+	 return("")
 }
 
 dtableConfig_otherDocsTable = {
