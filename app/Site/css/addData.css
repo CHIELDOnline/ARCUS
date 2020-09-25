@@ -69,11 +69,12 @@ ul {
 
 #sampleEditor{
 	display: none;
-	position: absolute;
-	top:50%;
+	position: fixed;
+	top:20%;
 	left: 20%;
-	right: 20%
-	background: "#FFFACD";
+	right: 20%;
+	bottom: 20%;
+	background-color: rgba(217, 252, 255, 0.9);
 	box-shadow: 10px 10px 5px grey;
 }
 

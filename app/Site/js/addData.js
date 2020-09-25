@@ -86,7 +86,11 @@ var escapeCell = function(value, item){
 var sampleCell = function(value, item){
 	console.log("ITEM");
 	console.log(item);
-    return $("<td>").append(escapeHTML(value + ";" + item.SampleLocation + ";" + item.SampleDemographic));
+	var out = "";
+	if(value.length >0 || item.SampleLocation.length>0 || item.SampleDemographic.length>0){
+		out = value + ";" + item.SampleLocation + ";" + item.SampleDemographic;
+	}
+    return $("<td>").append(escapeHTML(out));
 }
 var analysisCell = function(value, item){
     return $("<td>").append('TODO');
@@ -112,9 +116,9 @@ customEditRowRenderer = function(item, itemIndex) {
     var $Subject = $('<input>').attr("type", "text").attr("name", "Subject").val(item.Subject).css({width:"100%",padding: ".3em .5em;"});
     var $Type = makeSelector(studyTypeTypes).attr("name", "Type").val(item.Type).css({width:"100%",padding: ".3em .5em;"});
     var $Sample = $('<button>Edit</button>').click(showSampleEditor).css({width:"100%",padding: ".3em .5em;"});
-    	$("#SampleN").val(item.Sample);
-    	$("#SampleLocation").val(item.SampleLocation);
-    	$("#SampleDemographic").val(item.SampleLocation);
+    	$("#ESampleN").val(item.Sample);
+    	$("#ESampleLocation").val(item.SampleLocation);
+    	$("#ESampleDemographic").val(item.SampleDemographic);
     var $Analysis = $('<button>Edit</button>').click(showAnalysisEditor).css({width:"100%",padding: ".3em .5em;"});
     var $StatType = $('<input>').attr("type", "text").attr("name", "StatType").val(item["Stat type"]).css({width:"100%",padding: ".3em .5em;"});    
     var $Stat = $('<input>').attr("type", "text").attr("name", "Stat").val(item.Stat).css({width:"100%",padding: ".3em .5em;"});    
@@ -133,9 +137,9 @@ customEditRowRenderer = function(item, itemIndex) {
         Cor: $Cor.val(),
         Subject: $Subject.val(),
         Type: $Type.val(),
-        SampleN: $("#SampleN").val(),
-        SampleLocation: $("#SampleLocation").val(),
-        SampleDemographic: $("#SampleDemographic").val(),
+        Sample: $("#ESampleN").val(),
+        SampleLocation: $("#ESampleLocation").val(),
+        SampleDemographic: $("#ESampleDemographic").val(),
         Analysis: $("#AnalysisType").val(),
         AnalysisDetails: $("#AnalysisDetails").val(),
         StatType: $StatType.val(),
@@ -148,8 +152,34 @@ customEditRowRenderer = function(item, itemIndex) {
     $cancelButton.on("click", function() {
       grid.cancelEdit();
     });
+    
+	$("#ESampleEditorApply").click(function(){
+		// This is handled by the updateButton, so just close editor
+		$("#sampleEditor").blur();
+		$("#sampleEditor").hide();
+	});
+	$("#ESampleEditorApplyAll").click(function(){
+		console.log("apply all");
+		var update = {Sample: $("#ESampleN").val(),
+						SampleLocation: $("#ESampleLocation").val(),
+						SampleDemographic: $("#ESampleDemographic").val()};
 	
-	console.log(headerWidths);
+		var items = $("#jsGrid").jsGrid("option", "data");
+		for (var i = 0; i < items.length; ++i) {
+			$("#jsGrid").jsGrid("updateItem", items[i], update);
+			//grid.updateItem(items[i],update);
+		}
+
+		$("#sampleEditor").blur();
+		$("#sampleEditor").hide();
+		grid.refresh();
+	});
+	$("#ESampleEditorCancel").click(function(){
+		$("#sampleEditor").blur();
+		$("#sampleEditor").hide();
+	});
+	
+
     return $('<tr>')
       .append($('<td>').addClass("jsgrid-cell").width(headerWidths[0]).append($Var1))
      .append($("<td>").addClass("jsgrid-cell").width(headerWidths[1]).append($Relation))
@@ -180,9 +210,6 @@ function makeSelector(options){
 
 showSampleEditor = function(){
 	$("#sampleEditor").show();
-	$("#sampleEditorConfirm").click(function(){
-	
-	});
 	
 }
 

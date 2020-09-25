@@ -141,9 +141,17 @@
 		<div id="mynetwork"></div>
 		<div id="jsGrid"></div>
 		<div id="sampleEditor">
-			Sample N: <input id="SampleN" type="text"><br />
-			Sample Location: <input id="SampleLocation" type="text"><br />
-			Sample Demographic: <input id="SampleDemographic" type="text"><br />
+			<div class="container">
+				<h2>Sample Editor</h2>
+				<table>
+				<tr><td>Sample N: </td><td><input id="ESampleN" type="text"></td></tr>
+				<tr><td>Sample Location: </td><td><input id="ESampleLocation" type="text"></td></tr>
+				<tr><td>Sample Demographic: </td><td><input id="ESampleDemographic" type="text"></td></tr>
+				</table>
+				<button id="ESampleEditorCancel" class="btn btn-danger">Cancel</button>
+				<button id="ESampleEditorApply" class="btn btn-primary">Apply to this row</button>
+				<button id="ESampleEditorApplyAll" class="btn btn-primary">Apply to all rows</button>
+			</div>
 		</div>
 	</div>
 
