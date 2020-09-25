@@ -42,7 +42,7 @@
 <script src="js/github/githubUsernames.js"></script>
 <script src="js/util/jquery.csv.js"></script>
 <script src="js/util/fileUpload.js"></script>
-<script src="js/util/LocationHelper.js"></script>
+<script src="js/util/jquery.select-to-autocomplete.js"></script>
 
 </head>
 <body>
@@ -50,14 +50,25 @@
 
 		<div id="sampleEditor">
 			<div class="container">
-				<h2>Sample Editor</h2>
-				<table>
-				<tr><td>Sample N: </td><td><input id="SampleN" type="text"></td></tr>
-				<tr><td>Sample Location: </td><td><input id="SampleLocation" type="text"></td></tr>
-				<tr><td>Sample Demographic: </td><td><input id="SampleDemographic" type="text"></td></tr>
-				</table>
-				<button id="sampleEditorApply" class="btn btn-primary">Apply to this row</button>
-				<button id="sampleEditorApplyAll" class="btn btn-primary">Apply to all rows</button>
+			<div class="row">
+			    <div class="col">
+					<h2>Sample Editor</h2>
+					<table>
+					<tr><td>Sample N: </td><td><input id="SampleN" type="text"></td></tr>
+					<tr><td>Sample Location: </td><td><input id="SampleLocation" type="text"></td></tr>
+					<tr><td>Sample Demographic: </td><td><input id="SampleDemographic" type="text"></td></tr>
+					</table>
+					<button id="sampleEditorApply" class="btn btn-primary">Apply to this row</button>
+					<button id="sampleEditorApplyAll" class="btn btn-primary">Apply to all rows</button>
+				</div>
+				<div class="col">
+					<table>
+					<tr>
+						<td><button id="addLocation">&larr; Add</button></td>
+						<td><link href="LocationHelper.html" rel="import" /></td>
+					</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 		

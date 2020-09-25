@@ -42,6 +42,7 @@
 <script src="js/github/githubUsernames.js"></script>
 <script src="js/util/jquery.csv.js"></script>
 <script src="js/util/fileUpload.js"></script>
+<script src="js/util/jquery.select-to-autocomplete.js"></script>
 
 </head>
 <body>
@@ -142,15 +143,30 @@
 		<div id="jsGrid"></div>
 		<div id="sampleEditor">
 			<div class="container">
-				<h2>Sample Editor</h2>
-				<table>
-				<tr><td>Sample N: </td><td><input id="ESampleN" type="text"></td></tr>
-				<tr><td>Sample Location: </td><td><input id="ESampleLocation" type="text"></td></tr>
-				<tr><td>Sample Demographic: </td><td><input id="ESampleDemographic" type="text"></td></tr>
-				</table>
-				<button id="ESampleEditorCancel" class="btn btn-danger">Cancel</button>
+				<h2>Sample Editor</h2><br /><br />
+				<div class="row">
+			    <div class="col">
+					<table style="width:100%">
+					<tr><td>Sample N: </td><td><input id="SampleN" type="text"></td></tr>
+					<tr><td>Sample Location: </td><td><input id="SampleLocation" type="text"></td></tr>
+					<tr><td>Sample Demographic: </td><td><input id="SampleDemographic" type="text"></td></tr>
+					</table>
+				</div>
+				<div class="col">
+					<h3>Search and add locations</h3>
+					<p>Start typing a country name for suggestions. Suggestions are made for alternative names.</p>
+					<table>
+					<tr>
+						<td><button id="addLocation">&larr; Add</button></td>
+						<td><select name="Country" id="country-selector" autofocus="autofocus" autocorrect="off" autocomplete="off"></select></td>
+					</tr>
+					</table>
+				</div>
+				</div>
+				<br /><br />
 				<button id="ESampleEditorApply" class="btn btn-primary">Apply to this row</button>
 				<button id="ESampleEditorApplyAll" class="btn btn-primary">Apply to all rows</button>
+				<button id="ESampleEditorCancel" class="btn btn-danger">Cancel</button>
 			</div>
 		</div>
 	</div>

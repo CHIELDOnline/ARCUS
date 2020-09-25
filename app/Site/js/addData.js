@@ -87,7 +87,7 @@ var sampleCell = function(value, item){
 	console.log("ITEM");
 	console.log(item);
 	var out = "";
-	if(value.length >0 || item.SampleLocation.length>0 || item.SampleDemographic.length>0){
+	if((value.length >0) || (item.SampleLocation.length>0) || (item.SampleDemographic.length>0)){
 		out = value + ";" + item.SampleLocation + ";" + item.SampleDemographic;
 	}
     return $("<td>").append(escapeHTML(out));
@@ -96,11 +96,10 @@ var analysisCell = function(value, item){
     return $("<td>").append('TODO');
 }
 
-var gx = 0;
+
 
 customEditRowRenderer = function(item, itemIndex) {
     var grid = this;
-	gx = grid;
     var headers = grid._headerRow[0].children;
     var headerWidths = []
     for(var i=0;i<headers.length;++i){
@@ -116,9 +115,9 @@ customEditRowRenderer = function(item, itemIndex) {
     var $Subject = $('<input>').attr("type", "text").attr("name", "Subject").val(item.Subject).css({width:"100%",padding: ".3em .5em;"});
     var $Type = makeSelector(studyTypeTypes).attr("name", "Type").val(item.Type).css({width:"100%",padding: ".3em .5em;"});
     var $Sample = $('<button>Edit</button>').click(showSampleEditor).css({width:"100%",padding: ".3em .5em;"});
-    	$("#ESampleN").val(item.Sample);
-    	$("#ESampleLocation").val(item.SampleLocation);
-    	$("#ESampleDemographic").val(item.SampleDemographic);
+    	$("#SampleN").val(item.Sample);
+    	$("#SampleLocation").val(item.SampleLocation);
+    	$("#SampleDemographic").val(item.SampleDemographic);
     var $Analysis = $('<button>Edit</button>').click(showAnalysisEditor).css({width:"100%",padding: ".3em .5em;"});
     var $StatType = $('<input>').attr("type", "text").attr("name", "StatType").val(item["Stat type"]).css({width:"100%",padding: ".3em .5em;"});    
     var $Stat = $('<input>').attr("type", "text").attr("name", "Stat").val(item.Stat).css({width:"100%",padding: ".3em .5em;"});    
@@ -137,9 +136,9 @@ customEditRowRenderer = function(item, itemIndex) {
         Cor: $Cor.val(),
         Subject: $Subject.val(),
         Type: $Type.val(),
-        Sample: $("#ESampleN").val(),
-        SampleLocation: $("#ESampleLocation").val(),
-        SampleDemographic: $("#ESampleDemographic").val(),
+        Sample: $("#SampleN").val(),
+        SampleLocation: $("#SampleLocation").val(),
+        SampleDemographic: $("#SampleDemographic").val(),
         Analysis: $("#AnalysisType").val(),
         AnalysisDetails: $("#AnalysisDetails").val(),
         StatType: $StatType.val(),
@@ -158,11 +157,35 @@ customEditRowRenderer = function(item, itemIndex) {
 		$("#sampleEditor").blur();
 		$("#sampleEditor").hide();
 	});
+	
+	// Problem: This works, but overwrites any information in 
+	//  other columns that are being edited.
+	$("#ESampleEditorApplyAll").hide()
 	$("#ESampleEditorApplyAll").click(function(){
-		console.log("apply all");
-		var update = {Sample: $("#ESampleN").val(),
-						SampleLocation: $("#ESampleLocation").val(),
-						SampleDemographic: $("#ESampleDemographic").val()};
+
+		// Update current editing item, so that changes are not lost
+		// This currently doesn't fix the problem
+		grid.updateItem({
+			Var1: $Var1.val(),
+			Relation: $Relation.val(),
+			Var2: $Var2.val(),
+			Cor: $Cor.val(),
+			Subject: $Subject.val(),
+			Type: $Type.val(),
+			Sample: $("#SampleN").val(),
+			SampleLocation: $("#SampleLocation").val(),
+			SampleDemographic: $("#SampleDemographic").val(),
+			Analysis: $("#AnalysisType").val(),
+			AnalysisDetails: $("#AnalysisDetails").val(),
+			StatType: $StatType.val(),
+			Stat: $Stat.val(),
+			Confirmed: $Confirmed.val(),
+			Notes: $Notes.val()
+      	});
+		
+		var update = {Sample: $("#SampleN").val(),
+						SampleLocation: $("#SampleLocation").val(),
+						SampleDemographic: $("#SampleDemographic").val()};
 	
 		var items = $("#jsGrid").jsGrid("option", "data");
 		for (var i = 0; i < items.length; ++i) {
@@ -442,6 +465,18 @@ function generalNotes2Bib(){
 	}
 }
 
+function addLocationFromHelper(){
+		var txt = $("#SampleLocation").val();
+		txt = txt.trim();
+		if(txt.length>0){
+			txt += "; "
+		}
+		txt += $('#country-selector').val();
+		$("#SampleLocation").val(txt);
+		$('#country-selector').val("");
+		$('#SampleLocation').get(0).scrollLeft = $('#SampleLocation').get(0).scrollWidth; 
+	}
+
 function offerCausalLinksAsCSV(){
 	var data = $('#jsGrid').jsGrid('option', 'data');
 	var csvData = JSONToCSVConvertor(data, true);
@@ -693,6 +728,21 @@ $(document).ready(function(){
 
 	// Make network box resizable
 	$( "#mynetwork" ).resizable();
+	
+	
+	// country selector
+	$("#country-selector").load("LocationHelper.html", function(){
+		// after load
+		$('#country-selector').selectToAutocomplete();
+	});
+	$('#addLocation').click(addLocationFromHelper);
+	// input for country selector
+	$('#country-selector').next().keyup(function(event){
+		// if pressed enter
+		if ( event.which == 13 ) {
+			addLocationFromHelper();
+		}
+	});
 
 });
 
