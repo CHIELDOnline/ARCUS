@@ -78,6 +78,17 @@ ul {
 	box-shadow: 10px 10px 5px grey;
 }
 
+#analysisEditor{
+	display: none;
+	position: fixed;
+	top:20%;
+	left: 20%;
+	right: 20%;
+	bottom: 20%;
+	background-color: rgba(217, 252, 255, 0.9);
+	box-shadow: 10px 10px 5px grey;
+}
+
 /* display long text as ellipsis */
 
 .jsgrid-cell {

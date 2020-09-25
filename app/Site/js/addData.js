@@ -93,7 +93,11 @@ var sampleCell = function(value, item){
     return $("<td>").append(escapeHTML(out));
 }
 var analysisCell = function(value, item){
-    return $("<td>").append('TODO');
+	var out = "";
+	if((value.length >0) || (item.AnalysisDetails.length>0)){
+		out = value + ": " + item.AnalysisDetails;
+	}
+    return $("<td>").append(escapeHTML(out));
 }
 
 
@@ -119,6 +123,8 @@ customEditRowRenderer = function(item, itemIndex) {
     	$("#SampleLocation").val(item.SampleLocation);
     	$("#SampleDemographic").val(item.SampleDemographic);
     var $Analysis = $('<button>Edit</button>').click(showAnalysisEditor).css({width:"100%",padding: ".3em .5em;"});
+    	$("#AnalysisType").val(item.Analysis);
+    	$("#AnalysisDetails").val(item.AnalysisDetails);
     var $StatType = $('<input>').attr("type", "text").attr("name", "StatType").val(item["Stat type"]).css({width:"100%",padding: ".3em .5em;"});    
     var $Stat = $('<input>').attr("type", "text").attr("name", "Stat").val(item.Stat).css({width:"100%",padding: ".3em .5em;"});    
     var $Confirmed = makeSelector(confirmTypes).attr("name", "Confirmed").val(item.Confirmed).css({width:"100%",padding: ".3em .5em;"});
@@ -158,9 +164,15 @@ customEditRowRenderer = function(item, itemIndex) {
 		$("#sampleEditor").hide();
 	});
 	
+	$("#EAnalysisEditorApply").click(function(){
+		// This is handled by the updateButton, so just close editor
+		$("#analysisEditor").blur();
+		$("#analysisEditor").hide();
+	})
+	
 	// Problem: This works, but overwrites any information in 
 	//  other columns that are being edited.
-	$("#ESampleEditorApplyAll").hide()
+	$("#ESampleEditorApplyAll").hide(); // hide until we can fix this
 	$("#ESampleEditorApplyAll").click(function(){
 
 		// Update current editing item, so that changes are not lost
@@ -197,9 +209,15 @@ customEditRowRenderer = function(item, itemIndex) {
 		$("#sampleEditor").hide();
 		grid.refresh();
 	});
+	
 	$("#ESampleEditorCancel").click(function(){
 		$("#sampleEditor").blur();
 		$("#sampleEditor").hide();
+	});
+	
+	$("#EAnalysisEditorCancel").click(function(){
+		$("#analysisEditor").blur();
+		$("#analysisEditor").hide();
 	});
 	
 
@@ -237,7 +255,7 @@ showSampleEditor = function(){
 }
 
 showAnalysisEditor = function(){
-	//TODO
+	$("#analysisEditor").show();
 }
 
 
@@ -479,7 +497,10 @@ function addLocationFromHelper(){
 
 function offerCausalLinksAsCSV(){
 	var data = $('#jsGrid').jsGrid('option', 'data');
-	var csvData = JSONToCSVConvertor(data, true);
+
+	var trueHeaders = ["Var1","Relation","Var2","Cor","Subject","Type","SampleN","SampleLocation","SampleDemographic","AnalysisType","AnalysisDetails","StatType","Stat","Confirmed","Notes"];
+	var csvData = JSONToCSVConvertor(data, true,trueHeaders);
+
 	var link = document.createElement('a');
 	link.style.display = 'none';
 	link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(csvData);

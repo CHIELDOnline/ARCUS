@@ -1,20 +1,30 @@
-function JSONToCSVConvertor(JSONData, ShowLabel) {
+function JSONToCSVConvertor(JSONData, printHeader,altHeaderNames=[]) {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
     var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
     var CSV = '';
-    //This condition will generate the Label/Header
-    if (ShowLabel) {
+    //This condition will generate the header
+    // from the attribtue names for the first row
+	// or the altHeaderNames list
+    if (printHeader) {
         var row = "";
-        //This loop will extract the label from 1st index of on array
-        for (var index in arrData[0]) {
-            if(index.length>0){
-                //Now convert each value to string and comma-seprated
-                row += '"' +index + '",';
-            }
+        if(altHeaderNames.length>0){
+   	    	// set header name from argument 
+        	for(var i=0;i<altHeaderNames.length;++i){
+        		row += '"'+altHeaderNames[i]+'",'
+        	}
+    		row = row.substring(0, row.length - 1);
+    	} else{
+			//This loop will extract the headers from 1st index of on array
+			for (var index in arrData[0]) {
+				if(index.length>0){
+					//Now convert each value to string and comma-seprated
+					row += '"' +altHeaderNames[index] + '",';
+				}
+			}
+			// remove trailing comma
+			row = row.slice(0, -1);
         }
-        // remove trailing comma
-        row = row.slice(0, -1);
-        //append Label row with line break
+        //append header row with line break
         CSV += row + '\n';
     }
     //1st loop is to extract each row

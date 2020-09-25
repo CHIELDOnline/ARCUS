@@ -194,8 +194,8 @@ function addRowToGrid(rowObj){
 	//console.log(rowObj);
 	var fields = $("#jsGrid").jsGrid().data().JSGrid.fields;
 
-	var gridFieldNames = ["Var1","Relation","Var2","Cor","Topic","Stage","Type","Confirmed","Notes"];
-	var databaseNames = ["variable1","relation","variable2","Cor","Topic","Stage","Type","Confirmed","Notes"];
+	var gridFieldNames = ["Var1","Relation","Var2","Cor","Subject","Type","Sample","SampleLocation","SampleDemographic","Analysis","AnalysisDetails","Stat type","Stat","Confirmed","Notes"];
+	var databaseNames = ["variable1","relation","variable2","Cor","Subject","Type","SampleN","SampleLocation","SampleDemographic","AnalysisType","AnalysisDetails","StatType","Stat","Confirmed","Notes"];
 
 	//console.log(fields);
 	var rowData = {};
