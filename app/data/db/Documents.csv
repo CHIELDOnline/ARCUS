@@ -365,11 +365,12 @@
   year = {2020},
   publisher = {SAGE Publications Sage CA: Los Angeles, CA},
 }","Hwang, Jung, Shaw, Mestad et al. (2020)"
-"test2020test","T. Test","2020","Paid Leave and Maternal Depressive Symptoms After Childbirth: The Moderating Role of Perceived Fairness of the Division of Household Labor","@Article{test2020test,
-  title = {Paid Leave and Maternal Depressive Symptoms After Childbirth: The Moderating Role of Perceived Fairness of the Division of Household Labor},
+"test2020test","T. Test","2020","A test article","@Article{test2020test,
+  title = {A test article},
   author = {T. Test},
   journal = {Families in Society},
   pages = {1044389420913124},
   year = {2020},
   publisher = {SAGE Publications Sage CA: Los Angeles, CA},
+  note = {This is a general note},
 }","Test (2020)"

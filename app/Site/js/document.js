@@ -138,6 +138,11 @@ function updateRecord(response,type){
 		shortCite = response[0].citation;
 		$("#documentShortCite").html(shortCite);
 		displayBibtex();
+		var generalNote = cite.set($('#bibtexsource')).data[0].note;
+		if(generalNote!=null){
+			$("#GeneralNote").show();
+			$("#GeneralNoteText").html(generalNote)
+		}
 	}
 	if(type=="links"){
 		doc_causal_links = JSON.parse(response);
@@ -286,6 +291,7 @@ function editDocumentData(){
 $(document).ready(function(){
 	$("#quoteDiv").hide();
 	$("#bibtexsource").hide();	
+	$("#GeneralNote").hide()
 	$("#header").load("header.html", function(){
 		$("#DocumentsHREF").addClass("active");
 	}); 
