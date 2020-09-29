@@ -11,14 +11,10 @@ SELECT l.pk,
        Relation as relation,
        s2.[name] variable2,
        Cor,
-       Subject,
-       Type,
-       SampleN,SampleLocation,SampleDemographic,
-       AnalysisType,AnalysisDetails,
        StatType,Stat,
+       l.Confirmed,
      d.[citation] bibref,
-     bibref as citekey,
-     l.Confirmed
+     bibref as citekey
   FROM causal_links l 
   LEFT JOIN variables s ON l.Var1 = s.pk 
   LEFT JOIN variables s2 ON l.Var2 = s2.pk

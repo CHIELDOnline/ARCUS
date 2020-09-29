@@ -16,26 +16,37 @@ var existingVariables_pk = [];
 var existingDocuments = [];
 var existingDocuments_pk = [];
 
+// SELECT l.pk,
+//        s.[name] variable1,
+//        Relation as relation,
+//        s2.[name] variable2,
+//        Cor,
+//        StatType,Stat,
+//        l.Confirmed,
+//      d.[citation] bibref,
+//      bibref as citekey
+
+
 dtableConfig =  {
 		ordering: true,
         lengthChange: false,
-        order: [[7, "asc"], [ 0, "asc" ], [2, "asc"]],
+        order: [[0, "asc"]],
         //scrollY: "300px",
         //scrollCollapse: true,
         paging: true,
         pageLength: 20,
         columns: [
-        		{ data: 0, visible:false},
-        		{ data: 1},
-        		{ data: 2},
-        		{ data: 3},
-        		{ data: 4},
-        		{ data: 5},
-        		{ data: 6},
+        		{ data: 0, visible:false}, //pk
+        		{ data: 1}, //v1
+        		{ data: 2},//relation
+        		{ data: 3},//v2
+        		{ data: 4},//cor
+        		{ data: 5}, //stat type
+        		{ data: 6}, //stat
+        		{ data: 7}, //confirmed
     			{ data: null, render: function(data,type,row){
-        			return '<a href="document.html?key=' + data[8] +'" target="_blank">'+data[7] + '</a>';
-        		}},
-        		{ data: 8, visible:false},
+        			return '<a href="document.html?key=' + data[9] +'" target="_blank">'+data[8] + '</a>';
+        		}}, // bib and link
         		{ data: 9, visible:false}
  	 		]
  	 	};

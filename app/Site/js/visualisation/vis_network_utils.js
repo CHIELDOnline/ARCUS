@@ -163,14 +163,17 @@ function initialiseNetwork(){
 
 }
 
-function getEdgeSettings(edge_id, Var1, Var2, Relation, Cor, Type, Stage,bibref,citation,confirmed){
+//function getEdgeSettings(edge_id, Var1, Var2, Relation, Cor, Type, Stage,bibref,citation,confirmed){
+function getEdgeSettings(edge_id, currentProperties){
   // standard setting: ">"
 
-  var newEdge = {
-      id: edge_id,
-      from: Var1,
-        to: Var2,
-        arrows: {
+  var newEdge = currentProperties;
+//  var kx = Object.keys(currentProperties);
+//  for(var i=0;i<kx.length;++i){
+//  	newEdge[kx[i]] = currentProperties[kx[i]];
+//  }
+  
+  newEdge.arrows= {
           to: {
             enabled:true,
             type: "arrow"
@@ -179,46 +182,38 @@ function getEdgeSettings(edge_id, Var1, Var2, Relation, Cor, Type, Stage,bibref,
             enabled:false,
             type: "arrow"
           }
-        },
-        color: {color:"#000000"},
-        causal_relation: Relation,
-        cor: Cor,
-        studyType: Type,
-        stage: Stage,
-        bibref: bibref,
-        citation: citation,
-        confirmed: confirmed
-    };
+        };
+   newEdge.color= {color:"#000000"};
 
-  if(Relation=="<"){
+  if(newEdge.causal_relation=="<"){
     newEdge.arrows.to.enabled = false;
     newEdge.arrows.from.enabled  = true;
   }
-  if(Relation==">>"){
+  if(newEdge.causal_relation==">>"){
     if(edge_colour_scheme=="causal"){
       newEdge.color.color = "red"
     }
   }
-  if(Relation=="<=>"){
+  if(newEdge.causal_relation=="<=>"){
     //newEdge.arrows = "to;from";
     newEdge.arrows.from.enabled  = true;
   }
-  if(Relation=="~=" || Relation =="=~"){
+  if(newEdge.causal_relation=="~=" || newEdge.causal_relation =="=~"){
     newEdge.arrows.to["type"] = "circle";
   }
 
-  if(Relation=="~"){
+  if(newEdge.causal_relation=="~"){
     newEdge.dashes = true;
     newEdge.arrows.to.enabled = false;
     newEdge.color.color = "#b3b6b7";
   }
 
-  if(Relation=="/>"){
+  if(newEdge.causal_relation=="/>"){
     console.log("/>");
     newEdge.arrows.to["type"] = "bar";
   }
 
-  if(Relation=="^"){
+  if(newEdge.causal_relation=="^"){
       // Swap order
       var tmp = newEdge.from
       newEdge.from = newEdge.to;
@@ -232,7 +227,7 @@ function getEdgeSettings(edge_id, Var1, Var2, Relation, Cor, Type, Stage,bibref,
       newEdge.smooth = true;
   }
 
-  if(confirmed=="no"){
+  if(newEdge.confirmed=="no"){
     newEdge.shadow ={
       "enabled": true,
       "color": "rgba(255,0,0,1)",
@@ -373,18 +368,27 @@ function redrawGUIfromObject(obj){
         doc_citation = existingDocuments_pk[existingDocuments.indexOf(obj[row].bibref)];
       }
 
+
+
       // Node ids are pks, so 'from' and 'to' need to be pks
-      var newEdge = getEdgeSettings(
-        this_edge_id,
-        this_var1_pk,
-        this_var2_pk,
-        this_relation,
-        obj[row].Cor,
-        obj[row].Type,
-        obj[row].Stage,
-        obj[row].citekey,
-        obj[row].bibref,
-        obj[row].Confirmed); 
+      var newEdge = getEdgeSettings(this_edge_id,
+      { id: this_edge_id,
+        from: this_var1_pk,
+        to: this_var2_pk,
+        causal_relation: this_relation,
+        cor: obj[row].Cor,
+        studyType: obj[row].Type,
+        stage: obj[row].Stage,
+        bibref: obj[row].citekey,
+        citation: obj[row].bibref,
+        confirmed: obj[row].Confirmed,
+        statType: obj[row].StatType,
+        stat: obj[row].Stat,
+        sampleN: obj[row].SampleN,
+        sampleLocation: obj[row].SampleLocation,
+        sampleDemographic: obj[row].SampleDemographic,
+        analysisType: obj[row].AnalysisType
+        }); 
       // add it to the network
       network_edges.add(newEdge);
 

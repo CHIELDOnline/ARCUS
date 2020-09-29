@@ -78,20 +78,19 @@ function updateGridFromNetwork(){
 	for(var i=0;i<edges.length;++i){
 		var edge = edges[i];
 		if((network_nodes.get(edge.from)!=null) && (network_nodes.get(edge.to)!=null)){
+			console.log("E");
+			console.log(edge)
 			var newRow = [
 				null,
 				network_nodes.get(edge.from).label,
 				edge.causal_relation,
 				network_nodes.get(edge.to).label,
 				edge.cor,
-				edge.stage,
-				edge.studyType,
-				//'<a href="document.html?key='+ edge.bibref +'">' + edge.citation + "</a>",
-				//null,
-				//null
+				edge.statType,
+				edge.stat,
+				edge.confirmed, // Confirmed
 				edge.citation,
-				edge.bibref,
-				edge.confirmed // Confirmed
+				edge.bibref
 			];
 			rows.push(newRow);
 		}
