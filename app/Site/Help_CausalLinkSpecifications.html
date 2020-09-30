@@ -63,9 +63,9 @@ table {
 
 <h1 id="toc_0">Causal link specification</h1>
 
-<p>CHIELD is a database of causal links.  Each record in the database is a particular causal link between two variables which is taken from an academic document.</p>
+<p>ARCUS is a database of causal links.  Each record in the database is a particular causal link between two variables which is taken from an academic document.</p>
 
-<p>Below is the specification of how data is stored in CHIELD.</p>
+<p>Below is the specification of how data is stored in ARCUS.</p>
 
 <ul>
 <li> Bibtex file specifying the details of the document</li>
@@ -73,28 +73,18 @@ table {
 <li> Contirbutors file specifying who contributed the data</li>
 </ul>
 
-<p>See the page on <a href="Help_AddingData.html">adding data to CHIELD</a> for information on how to create these formats.</p>
+<p>See the page on <a href="Help_AddingData.html">adding data to ARCUS</a> for information on how to create these formats.</p>
 
-<p>If you think the specification could be improved, you could <a href="https://github.com/CHIELDOnline/CHIELD/issues/new">raise an issue</a> (requires a free GitHub account).</p>
+<p>If you think the specification could be improved, you could <a href="https://github.com/CHIELDOnline/ARCUS/issues/new">raise an issue</a> (requires a free GitHub account).</p>
 
 <h1 id="toc_1">Documents</h1>
 
-<p>In CHIELD, Causal links are grouped under <strong>documents</strong>.  These will usually be published journal articles.  </p>
+<p>In ARCUS, Causal links are grouped under <strong>documents</strong>.  These will usually be published journal articles.  </p>
 
-<p>The condition for entry into the database is that the document proposed a hypothesis with causal claims that relates to some part of the evolution of communication and that it is published in a peer-reviewed publication.  This could be either biological or cultural evolution (or both) at any stage in history.</p>
+<p>Entry into the database does not mean that the hypothesis is correct nor widely accepted nor even empirically supported.  The aim is not that the database be a single coherent, consistent theory, but a reflection of the field.</p>
 
-<p>Entry into the database does not mean that the hypothesis is correct nor widely accepted nor even empirically supported.  The aim is not that the database be a single coherent, consistent theory of the evolution of communication, but a reflection of the field.</p>
 
-<p>Potential sources for documents include:</p>
-
-<ul>
-<li> <a href="http://groups.lis.illinois.edu/amag/langev/">The Language Evolution and Computation Bibliography</a></li>
-<li> <a href="https://academic.oup.com/jole">The Journal of Language Evolution</a></li>
-<li> <a href="https://benjamins.com/#catalog/journals/is/main">Interaction studies</a></li>
-<li> <a href="http://evolang.org/">EvoLang conferences</a></li>
-</ul>
-
-<p>Details of documents are stored in CHIELD in BibTex format.</p>
+<p>Details of documents are stored in ARCUS in BibTex format.</p>
 
 <h1 id="toc_2">Causal links</h1>
 
@@ -114,7 +104,6 @@ table {
 <th style="text-align: center">Var2</th>
 <th style="text-align: center">Cor</th>
 <th style="text-align: center">Topic</th>
-<th style="text-align: center">Stage</th>
 <th style="text-align: center">Type</th>
 <th style="text-align: center">Confirmed</th>
 <th style="text-align: center">Notes</th>
@@ -128,7 +117,6 @@ table {
 <td style="text-align: center">ice-cream consumption</td>
 <td style="text-align: center">pos</td>
 <td style="text-align: center">food</td>
-<td style="text-align: center"></td>
 <td style="text-align: center">hypothesis</td>
 <td style="text-align: center"></td>
 <td style="text-align: center">&quot;high temperatures cause more ice-cream consumption&quot;</td>
@@ -139,7 +127,6 @@ table {
 <td style="text-align: center">shirt stains</td>
 <td style="text-align: center">pos</td>
 <td style="text-align: center">food</td>
-<td style="text-align: center"></td>
 <td style="text-align: center">hypothesis</td>
 <td style="text-align: center"></td>
 <td style="text-align: center">&quot;more ice-cream consumption leads to more shirt stains&quot;</td>
@@ -201,7 +188,7 @@ table {
      }
 </script>
 
-<p>There are many more examples in the main CHIELD database if you view the details of a particular document.</p>
+<p>There are many more examples in the main ARCUS database if you view the details of a particular document.</p>
 
 <h2 id="toc_4">Specification</h2>
 
@@ -273,7 +260,7 @@ table {
 
 <p>Some of the syntax is borrowed from the <a href="http://lavaan.ugent.be/">lavaan</a> R package. This package uses &quot;=~&quot; for an <em>indicator</em> relationship, but this can cause problems when typing in some spreadsheet applications, so it has been reversed to &quot;~=&quot; (the meaning is the same).</p>
 
-<p>The <em>selection pressure</em> relation &quot;^&quot; is an experimental relation type.  It is included to support evolutionary hypotheses.  Often, causal relations apply to immediate or short-term consequences for individuals.  For example, <a href="http://localhost/CHIELD/Site/document.html?key=dunbar2004gossip">Dunbar (2004)</a> reviews work showing that grooming releases endorphins.  However, sometimes these don&#39;t capture the overall message of a theory.  For example, <a href="http://localhost/CHIELD/Site/document.html?key=dunbar2004gossip">Dunbar (2004)</a> suggests that &quot;the cognitive demands of gossip are the very reason why such large brains evolved in the human lineage&quot;.  The implication is not that if an individual gossips more, then their brain gets bigger.  Rather, gossip is useful for forming alliances, which has an effect on fitness.  As a consequence, evolution selects individuals with bigger brains to support more gossip.  This seems like a different kind of causal argument than, for example, grooming releasing endorphins.  Moreover, this seems like a central point for Dunbar, but it is not captured by any of the explicitly mentioned causal links.  The &quot;^&quot; relation is intended for these situations.</p>
+<p>The <em>selection pressure</em> relation &quot;^&quot; is an experimental relation type.  It is included to support evolutionary hypotheses.  Often, causal relations apply to immediate or short-term consequences for individuals.  For example, <a href="https://chield.excd.org/document.html?key=dunbar2004gossip">Dunbar (2004)</a> reviews work showing that grooming releases endorphins.  However, sometimes these don&#39;t capture the overall message of a theory.  For example, <a href="https://chield.excd.org/document.html?key=dunbar2004gossip">Dunbar (2004)</a> suggests that &quot;the cognitive demands of gossip are the very reason why such large brains evolved in the human lineage&quot;.  The implication is not that if an individual gossips more, then their brain gets bigger.  Rather, gossip is useful for forming alliances, which has an effect on fitness.  As a consequence, evolution selects individuals with bigger brains to support more gossip.  This seems like a different kind of causal argument than, for example, grooming releasing endorphins.  Moreover, this seems like a central point for Dunbar, but it is not captured by any of the explicitly mentioned causal links.  The &quot;^&quot; relation is intended for these situations.</p>
 
 <h3 id="toc_8">Correlation direction (Cor)</h3>
 
@@ -309,24 +296,8 @@ table {
 
 <h3 id="toc_9">Topic</h3>
 
-<p>This relates to the topic of the hypothesis (e.g. syntax, semantics, phonetics, genetics, population dynamics etc.).  Topics should be lower-case.  Multiple topics can be entered, seperated by a semicolon &quot;;&quot;.</p>
+<p>This relates to the topic of the hypothesis.  Topics should be lower-case.  Multiple topics can be entered, seperated by a semicolon &quot;;&quot;.</p>
 
-<h3 id="toc_10">Stage</h3>
-
-<p>Following <a href="http://www.cell.com/trends/cognitive-sciences/abstract/S13646613(10)00140-3">Scott-Phillips &amp; Kirby (2010)</a>, causal links can be assigned to one of four evolutionary stages:</p>
-
-<ul>
-<li> preadaptation</li>
-<li> coevolution</li>
-<li> cultural evolution</li>
-<li> language change</li>
-</ul>
-
-<p>From Scott-Phillips &amp; Kirby (2010):</p>
-
-<blockquote>
-<p>&quot;We can characterise the study of language evolution as being concerned with the emergence of language out of non-language. This involves two main processes of information transmission and change: a biological one (shown here with solid arrows) and cultural one (shown here with dashed arrows). Prior to the existence of a culturally transmitted communication system, we can consider only the various preadaptations for language (e.g. vocal learning, conceptual structure; [47). Once cultural transmission is in place, then it might operate simultaneously with biological evolution in a co-evolutionary process and/or there might be cultural evolution alone [48. In either case, we urgently need a better general understanding of how cultural transmission and social coordination shape language if we are to achieve a complete picture of the evolution of language. Once language has emerged, further changes can and do occur. This is the domain of language change and historical linguistics.&quot;</p>
-</blockquote>
 
 <h3 id="toc_11">Type</h3>
 
@@ -366,6 +337,10 @@ table {
 <td style="text-align: center">Results of a qualitative study (interviews, observation etc.)</td>
 </tr>
 <tr>
+<td>survey</td>
+<td style="text-align: center">Results of a survey of individuals.</td>
+</tr>
+<tr>
 <td>logical</td>
 <td style="text-align: center">Argument based on logical statements (e.g. argument from first principles, mathematical proofs)</td>
 </tr>
@@ -380,7 +355,7 @@ table {
 </tbody>
 </table>
 
-<p>This is a non-exhaustive list, so if you think other categories should be added, you could <a href="https://github.com/CHIELDOnline/CHIELD/issues/new">raise an issue</a>.</p>
+<p>This is a non-exhaustive list, so if you think other categories should be added, you could <a href="https://github.com/CHIELDOnline/ARCUS/issues/new">raise an issue</a>.</p>
 
 <h3 id="toc_12">Confirmed</h3>
 
