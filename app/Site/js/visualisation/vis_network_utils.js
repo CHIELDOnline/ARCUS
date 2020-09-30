@@ -65,8 +65,8 @@ stageColours = {
   "preadaptation":'#DC3545'
 };
 
-var POSITIVE_COR_COLOUR = "#e92b2b"; // CHIELD RED
-var NEGATIVE_COR_COLOUR = "#2b4fe9"; // BLUE
+var POSITIVE_COR_COLOUR = "#33a02c"; // Green
+var NEGATIVE_COR_COLOUR = "#1f78b4"; // BLUE
 
 
 
@@ -184,6 +184,9 @@ function getEdgeSettings(edge_id, currentProperties){
           }
         };
    newEdge.color= {color:"#000000"};
+   // Make correlation show, even for causal scheme
+  if(newEdge.cor=="pos"){newEdge.color= {color:POSITIVE_COR_COLOUR};}
+  if(newEdge.cor=="neg"){newEdge.color= {color:NEGATIVE_COR_COLOUR};}
 
   if(newEdge.causal_relation=="<"){
     newEdge.arrows.to.enabled = false;
@@ -222,7 +225,7 @@ function getEdgeSettings(edge_id, currentProperties){
       newEdge.arrows.from.enabled  = true;
       newEdge.dashes = true;
       if(edge_colour_scheme=="causal"){
-        newEdge.color.color = "green";
+        newEdge.color.color = "black";
       }
       newEdge.smooth = true;
   }
