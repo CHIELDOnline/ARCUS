@@ -348,6 +348,7 @@ function redrawGUIfromGrid(){
 				// id is already in the list of ids
 				alert("Duplicate data at row "+(row+1));
 			} else{
+/* 
 				var newEdge = getEdgeSettings(
 					id,
 					this_var1,
@@ -359,6 +360,26 @@ function redrawGUIfromGrid(){
 			        null,
 			        null,
 			        objx.Confirmed);
+ */
+			        
+				var newEdge = getEdgeSettings(id,
+				  { id: id,
+					from: this_var1,
+					to: this_var2,
+					causal_relation: this_relation,
+					cor: objx.Cor,
+					studyType: objx.Type,
+					stage: objx.Stage,
+					bibref: null,
+					citation: null,
+					confirmed: objx.Confirmed,
+					statType: objx.StatType,
+					stat: objx.Stat,
+					sampleN: objx.SampleN,
+					sampleLocation: objx.SampleLocation,
+					sampleDemographic: objx.SampleDemographic,
+					analysisType: objx.AnalysisType
+					}); 
 				//console.log(newEdge);
 				network_edges.add(newEdge);
 			}

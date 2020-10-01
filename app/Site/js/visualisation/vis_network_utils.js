@@ -163,6 +163,8 @@ function initialiseNetwork(){
 
 }
 
+var x = 0;
+
 //function getEdgeSettings(edge_id, Var1, Var2, Relation, Cor, Type, Stage,bibref,citation,confirmed){
 function getEdgeSettings(edge_id, currentProperties){
   // standard setting: ">"
