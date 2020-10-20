@@ -67,6 +67,10 @@
 						{
 							"leaf" : "true",
 							"label" : "Behavioural economics"
+						},
+						{
+							"leaf" : "true",
+							"label" : "Experimental economics"
 						}
 					]
 				},
@@ -119,6 +123,10 @@
 				{
 					"leaf" : "true",
 					"label" : "Gender Studies"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Experimental Economics"
 				},
 				{
 					"leaf" : "true",
