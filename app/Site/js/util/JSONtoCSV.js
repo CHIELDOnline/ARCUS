@@ -18,7 +18,7 @@ function JSONToCSVConvertor(JSONData, printHeader,altHeaderNames=[]) {
 			for (var index in arrData[0]) {
 				if(index.length>0){
 					//Now convert each value to string and comma-seprated
-					row += '"' +altHeaderNames[index] + '",';
+					row += '"' +index + '",';
 				}
 			}
 			// remove trailing comma
