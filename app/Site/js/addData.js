@@ -495,8 +495,6 @@ function generalNotes2Bib(){
 		var bib = document.getElementById("bibtexsource").value;
 		var bib_object = bibtex2JSON(bib);
 		bib_object[0].properties.note = txt;
-		bib_object2 = cite.set(bib_object[0]);
-		bib_object2.data[0].year = "2015"
 		var bibSource = cite.set(bib_object).get({format:"string",type:"string",style:"bibtex"});
 		$("#bibtexsource").val(bibSource);
 	}
