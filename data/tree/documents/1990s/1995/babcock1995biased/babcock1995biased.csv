@@ -1,0 +1,6 @@
+"Var1","Relation","Var2","Cor","Subject","Type","Sample","SampleLocation","SampleDemographic","Analysis","AnalysisDetails","Stat type","Stat","Confirmed","Notes","StatType","bibref"
+"predetermined role",">","self-serving bias","pos","Experimental Economics","experiment","188","United States","Students","","","","","yes","When the participants were pre-informed of their roles as defendant or plaintiff, they showed a higher self serving bias, as opposed to the condition in which the participants were told their roles only after having made a settlement offer","","babcock1995biased"
+"self-serving bias",">","settlement","neg","Experimental Economics","experiment","188","United States","Students","","","","","yes","self-serving bias","","babcock1995biased"
+"self-serving bias","~","perceived fairness","","Experimental Economics","experiment","188","United States","","","","","","yes","self-serving bias","","babcock1995biased"
+"perceived fairness","~=","settlement","","Experimental Economics","experiment","188","United States","Students","","","","","yes","perceived fairness","","babcock1995biased"
+"common knowledge","/>","settlement","","Experimental Economics","experiment","188","United States","Students","","","","","yes","Knowing that all information regarding bargaining case is common knowledge, does not lead to higher settlement","","babcock1995biased"
