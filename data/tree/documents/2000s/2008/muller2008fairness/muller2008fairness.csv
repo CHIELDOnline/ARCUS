@@ -1,0 +1,5 @@
+"Var1","Relation","Var2","Cor","Subject","Type","Sample","SampleLocation","SampleDemographic","Analysis","AnalysisDetails","Stat type","Stat","Confirmed","Notes","StatType","bibref"
+"self-interest","~","conflict resolution","","Social Psychology","experiment","246","Germany","General population (mean age = 33.7)","","","","","yes","self-interest is closely related with conflict resolution","","muller2008fairness"
+"self-interest","/>","cooperation","","Social Psychology","experiment","246","Germany","General population (mean age = 33.7)","","","","","","self-interest is not important while cooperating","","muller2008fairness"
+"fairness","~","conditional cooperation","","Social Psychology","experiment","246","Germany","General population (mean age = 33.7)","","","","","yes","fairness is an important consideration during conditional cooperation, to make sure the self is not at a disadvantage","","muller2008fairness"
+"fairness","~","cooperation","","Social Psychology","experiment","246","Germany","General population (mean age = 33.7)","","","","","yes","fairness is closely related with cooperation","","muller2008fairness"
