@@ -85,6 +85,10 @@
 						{
 							"leaf" : "true",
 							"label" : "Developmental psychology"
+						},
+						{
+							"leaf" : "true",
+							"label" : "Social psychology"
 						}
 					]
 				},
@@ -110,6 +114,26 @@
 			"children" : [
 				{
 					"leaf" : "true",
+					"label" : "Experimental Economics"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Social Psychology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Cross-cultural psychology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Cross-cultural Psychology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Cross-Cultural Psychology"
+				},
+				{
+					"leaf" : "true",
 					"label" : "Applied Psychology"
 				},
 				{
@@ -123,10 +147,6 @@
 				{
 					"leaf" : "true",
 					"label" : "Gender Studies"
-				},
-				{
-					"leaf" : "true",
-					"label" : "Experimental Economics"
 				},
 				{
 					"leaf" : "true",
