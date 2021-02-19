@@ -10,7 +10,8 @@ suppressWarnings(suppressMessages(library(readr)))
 suppressWarnings(suppressMessages(library(crayon)))
 
 try(setwd("~/Documents/Bristol/ARCUS/ARCUSOnline/processing/"))
-try(setwd("C:/Users/admin/Desktop/Amazing Angarika/ARCUS/processing"))
+#try(setwd("C:/Users/admin/Desktop/Amazing Angarika/ARCUS/processing"))
+try(setwd("C:/Users/g_deb/OneDrive/Documents/GitHub/ARCUS"))
 
 source("detexify.R")
 
