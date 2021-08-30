@@ -150,15 +150,19 @@
 				},
 				{
 					"leaf" : "true",
+					"label" : "Antropology"
+				},
+				{
+					"leaf" : "true",
+					"label" : "Anthropology"
+				},
+				{
+					"leaf" : "true",
 					"label" : "Evolutionary Biology"
 				},
 				{
 					"leaf" : "true",
 					"label" : "Human Ecology"
-				},
-				{
-					"leaf" : "true",
-					"label" : "Anthropology"
 				},
 				{
 					"leaf" : "true",

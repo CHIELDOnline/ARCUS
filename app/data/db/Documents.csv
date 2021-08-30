@@ -111,6 +111,17 @@
   year = {2002},
   publisher = {Wiley Online Library},
 }","Batalova & Cohen (2002)"
+"ensminger2004market","Jean Ensminger; others","2004","Market integration and fairness: evidence from ultimatum, dictator, and public goods experiments in East Africa","@Article{ensminger2004market,
+  journal = {Foundations of human sociality: economic experiments and ethnographic evidence from fifteen small-scale societies},
+  note = {All games were one-shot with no repeated play. Though anonymity was ensured, due to small size of village, it might be hard to instill. This is because in a small community, individuals are used to repeated dealings.
+The community is that of pastoral nomads. Their tradition of harambee (giving village-level contributions for public projects) was of experimental interest, due to its similarity with the PGG.},
+  publisher = {Oxford University Press New York},
+  title = {Market integration and fairness: evidence from ultimatum, dictator, and public goods experiments in East Africa},
+  author = {Jean Ensminger and others},
+  pages = {356--381},
+  date = {2004},
+  year = {2004},
+}","Ensminger & others (2004)"
 "fuwa2004macro","Makiko Fuwa","2004","Macro-level gender inequality and the division of household labor in 22 countries","@Article{fuwa2004macro,
   title = {Macro-level gender inequality and the division of household labor in 22 countries},
   author = {Makiko Fuwa},
@@ -121,6 +132,19 @@
   year = {2004},
   publisher = {Sage Publications Sage CA: Los Angeles, CA},
 }","Fuwa (2004)"
+"henrich2005economic","Joseph Henrich; Robert Boyd; Samuel Bowles; Colin Camerer; Ernst Fehr; Herbert Gintis; Richard McElreath; Michael Alvard; Abigail Barr; Jean Ensminger; others","2005","“Economic man” in cross-cultural perspective: Behavioral experiments in 15 small-scale societies","@Article{henrich2005economic,
+  journal = {Behavioral and brain sciences},
+  number = {6},
+  note = {It is an exploratory paper, delving deep into how the selfishness axiom holds across cultures and subsistence groups. UG, DG and PGG were played, all one-shot, anonymous interactions with substantial real stakes. 
+Economic base included horticulture, foraging, pastoralism and agro-pastoralism. Residence types included nomadic, semi-nomadic, transhumant herders, bilocal-semi-nomadic and sedentary- nomadic. Settlement complexity included villages, families, clans and clan chiefdoms.
+},
+  title = {“Economic man” in cross-cultural perspective: Behavioral experiments in 15 small-scale societies},
+  volume = {28},
+  author = {Joseph Henrich and Robert Boyd and Samuel Bowles and Colin Camerer and Ernst Fehr and Herbert Gintis and Richard McElreath and Michael Alvard and Abigail Barr and Jean Ensminger and others},
+  pages = {795--855},
+  date = {2005},
+  year = {2005},
+}","Henrich, Boyd, Bowles, Camerer et al. (2005)"
 "braun2008perceived","Michael Braun; Noah Lewin-Epstein; Haya Stier; Miriam K Baumgärtner","2008","Perceived equity in the gendered division of household labor","@Article{braun2008perceived,
   title = {Perceived equity in the gendered division of household labor},
   author = {Michael Braun and Noah Lewin-Epstein and Haya Stier and Miriam K Baumgärtner},
@@ -202,6 +226,16 @@
   year = {2010},
   publisher = {Sage Publications Sage UK: London, England},
 }","DeMaris (2010)"
+"ruppanner2010conflict","Leah Ruppanner","2010","Conflict and housework: Does country context matter?","@Article{ruppanner2010conflict,
+  title = {Conflict and housework: Does country context matter?},
+  author = {Leah Ruppanner},
+  journal = {European Sociological Review},
+  volume = {26},
+  number = {5},
+  pages = {557--570},
+  year = {2010},
+  publisher = {Oxford University Press},
+}","Ruppanner (2010)"
 "andersen2011stakes","Steffen Andersen; Seda ErtaÃ§; Uri Gneezy; Moshe Hoffman; John A List","2011","Stakes matter in ultimatum games","@Article{andersen2011stakes,
   title = {Stakes matter in ultimatum games},
   author = {Steffen Andersen and Seda ErtaÃ§ and Uri Gneezy and Moshe Hoffman and John A List},
@@ -241,6 +275,18 @@
   year = {2011},
   publisher = {The University of North Carolina Press},
 }","Treas, van der Lippe & Tai (2011)"
+"ruppanner2012housework","Leah Ruppanner","2012","Housework conflict and divorce: A multi-level analysis","@Article{ruppanner2012housework,
+  journal = {Work, employment and society},
+  number = {4},
+  note = {The 2004 ESS includes data for the following coun- tries: Austria, Belgium, the Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Luxembourg, the Netherlands, Norway, Poland, Portugal, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, the UK and Ukraine. . The divorce/marriage support data are from the United Nations’ Demographic Yearbook that collects data from populations through- out the world. Additionally, The United Nations’ Human Development Report provides measures of a variety of demographic characteristics of a country used in this study. For this study, the respondents were selected if they are 18 or older, are currently living with a partner and report a housework conflict score},
+  publisher = {SAGE Publications Sage UK: London, England},
+  title = {Housework conflict and divorce: A multi-level analysis},
+  volume = {26},
+  author = {Leah Ruppanner},
+  pages = {638--656},
+  date = {2012},
+  year = {2012},
+}","Ruppanner (2012)"
 "baumard2013mutualistic","Nicolas Baumard; Jean-Baptiste André; Dan Sperber","2013","A mutualistic approach to morality: The evolution of fairness by partner choice","@Article{baumard2013mutualistic,
   title = {A mutualistic approach to morality: The evolution of fairness by partner choice},
   author = {Nicolas Baumard and Jean-Baptiste André and Dan Sperber},
@@ -251,6 +297,22 @@
   year = {2013},
   publisher = {Cambridge University Press},
 }","Baumard, André & Sperber (2013)"
+"lamba2013evolution","Shakti Lamba; Ruth Mace","2013","The evolution of fairness: Explaining variation in bargaining behaviour","@Article{lamba2013evolution,
+  journal = {Proceedings of the Royal Society B: Biological Sciences},
+  number = {1750},
+  note = {
+21 villages of the same ethno-linguistic group studied. Proposer offers varied substantially (modal offer = 50%) but responders nearly never rejected. 
+Proposers and responders do not have coordinated expectations even at the village-level, suggesting that either fairness does not regulate bargainer behaviour, or UG does not reflect the fairness norms regulating everyday life. Thus, environmental factors might be more important than cultural ones in determining UG behaviour.
+
+Multi-level normal linear models used with DIC (Deviance Information Criterion) used for model comparison.},
+  publisher = {The Royal Society},
+  title = {The evolution of fairness: Explaining variation in bargaining behaviour},
+  volume = {280},
+  author = {Shakti Lamba and Ruth Mace},
+  pages = {20122028},
+  date = {2013},
+  year = {2013},
+}","Lamba & Mace (2013)"
 "chaudhary2015polygyny","Nikhil Chaudhary; Gul Deniz Salali; James Thompson; Mark Dyble; Abigail Page; Daniel Smith; Ruth Mace; Andrea Bamberg Migliano","2015","Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies","@Article{chaudhary2015polygyny,
   title = {Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies},
   author = {Nikhil Chaudhary and Gul Deniz Salali and James Thompson and Mark Dyble and Abigail Page and Daniel Smith and Ruth Mace and Andrea Bamberg Migliano},
@@ -409,6 +471,14 @@
   year = {2019},
   publisher = {Elsevier},
 }","Smith, Dyble, Major, Page et al. (2019)"
+"adriaans2020justice","Jule Adriaans; Sandra Bohmann; Matteo Targa; Stefan Liebig; Thomas Hinz; Guillermino Jasso; Bernhard Kittel; Clara Sabbagh","2020","Justice and Fairness in Europe: Topline results from Round 9 of the European Social Survey","@Article{adriaans2020justice,
+  journal = {European Social Survey: Justice and Fairness in Europe},
+  note = {The data was taken from ESS Round 9 module - Justice and Fairness in Europe: Copingwith Growing Inequalities and Heterogeneities. The module was fielded in 2018/2019 and sheds light on perceptions of justice for self and others regarding outcomes such as income, education and job chances. The report focuses on the normative views people hold on the principles that should guide the fair allocation of goods and burdens within a society, the fairness of incomes for self and for others, the fairness of life chances, and the fairness of related political procedures},
+  title = {Justice and Fairness in Europe: Topline results from Round 9 of the European Social Survey},
+  author = {Jule Adriaans and Sandra Bohmann and Matteo Targa and Stefan Liebig and Thomas Hinz and Guillermino Jasso and Bernhard Kittel and Clara Sabbagh},
+  date = {2020},
+  year = {2020},
+}","Adriaans, Bohmann, Targa, Liebig et al. (2020)"
 "aina2020frustration","Chiara Aina; Pierpaolo Battigalli; Astrid Gamba","2020","Frustration and anger in the ultimatum game: An Experiment","@Article{aina2020frustration,
   title = {Frustration and anger in the ultimatum game: An Experiment},
   author = {Chiara Aina and Pierpaolo Battigalli and Astrid Gamba},
